@@ -8,8 +8,9 @@
         public string Bairro { get; private set; }
         public string CEP { get; private set; }
         public string Cidade { get; private set; }
-        public string Complemento { get; private set; }
-        public string Referencia { get; private set; }
+        public string Estado { get; private set; }
+        public string? Complemento { get; private set; }
+        public string? Referencia { get; private set; }
         public DateTime DataRegistro { get; private set; }
         public bool Removido { get; private set; }
 
@@ -19,14 +20,15 @@
         protected Endereco() { }
         
         public Endereco(
-            string informacaoEndereco, int numero, string bairro, string cEP, string cidade, int usuarioId,
+            string informacaoEndereco, int numero, string bairro, string cep, string cidade, string estado, int usuarioId,
             string complemento = "", string referencia = "")
         {
             InformacaoEndereco = informacaoEndereco;
             Numero = numero;
             Bairro = bairro;
-            CEP = cEP;
+            CEP = cep;
             Cidade = cidade;
+            Estado= estado;
             Complemento = complemento;
             Referencia = referencia;
             DataRegistro = DateTime.UtcNow;

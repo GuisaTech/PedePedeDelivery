@@ -6,9 +6,9 @@ namespace PPD.WebApp.Domain.Entidades
     {
         public int Id { get; private set; }
         public string Agencia { get; private set; }
-        public string DigitoAgencia { get; private set; }
+        public string? DigitoAgencia { get; private set; }
         public string Conta { get; private set; }
-        public string DigitoConta { get; private set; }
+        public string? DigitoConta { get; private set; }
         public string CodigoBanco { get; private set; }
         public string CpfTitular { get; private set; }
         public bool SouTitular { get; private set; }

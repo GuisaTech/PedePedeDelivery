@@ -1,13 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using PPD.Infrastructure.Data;
+using PPD.WebApp.Infrastructure.Configuration;
+using PPD.WebApp.Infrastructure.Repository;
+using PPD.WebApp.Infrastructure.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<PedePedeContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.RepositoryDependencyInjection(builder.Configuration);
 
 var app = builder.Build();
 

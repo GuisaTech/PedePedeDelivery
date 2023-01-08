@@ -1,13 +1,13 @@
 ﻿namespace PPD.WebApp.Domain.Entidades
 {
     //Adicionar Removido e data de registro em todos
-    public class Usuario
+    public class Usuario : Entidade
     {
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public string Cpf { get; private set; }
-        public string Telefone { get; private set; }
-        public DateTime DataNascimento { get; private set; }
+        public string? Telefone { get; private set; }
+        public DateTime? DataNascimento { get; private set; }
         public string Email { get; private set; }
         public string Senha { get; private set; }
         public bool Autorizado { get; private set; }
@@ -37,14 +37,15 @@
             Autorizado = false;
             DataRegistro = DateTime.UtcNow;
             Removido = false;
+            Enderecos= new List<Endereco>();
+            ChavesPix = new List<ChavePix>();
+            ContasBancarias= new List<ContaBancaria>();
         }
 
-        public void AdicionarInformacoesDePerfil(string telefone, DateTime dataNascimento, string email, string senha)
+        public void AtualizarInformacoesDePerfil(string telefone, DateTime dataNascimento)
         {
             Telefone = telefone;
             DataNascimento = dataNascimento;
-            Email = email;
-            Senha = senha;
         }
 
         public void AtualizarEnderecos(Endereco endereco) => Enderecos.Add(endereco);
@@ -56,6 +57,7 @@
         public void AtualizarContaBancaria(ContaBancaria contaBancaria)=> ContasBancarias.Add(contaBancaria);
         public void AtualizarContaBancaria(List<ContaBancaria> contasBancarias) => ContasBancarias= contasBancarias;
 
+        public void AtualizarStatusRemovido(bool removido) => Removido = removido;
         public bool Valido() => true;
     }
 }

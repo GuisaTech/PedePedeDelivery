@@ -32,6 +32,7 @@ namespace PPD.WebApp.Infrastructure.Data.Mappings
                 .HasColumnType("varchar(40)");
 
             builder.Property(x => x.Telefone)
+                .IsRequired(false)
                 .HasColumnType("varchar(11)");
 
             builder.HasMany(x => x.Enderecos)
