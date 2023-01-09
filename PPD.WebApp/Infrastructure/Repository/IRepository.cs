@@ -4,8 +4,8 @@ namespace PPD.WebApp.Infrastructure.Repository
 {
     public interface IRepository<T> where T : Entidade
     {
-        void Adicionar(T entidade);
-        void Atualizar(T entidade);
-        void Remover(T entidade);
+        Task Adicionar(T entidade);
+        Task Atualizar(T entidade);
+        Task Remover(T entidade);
     }
 }

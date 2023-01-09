@@ -2,23 +2,20 @@
 
 namespace PPD.WebApp.Domain.Entidades
 {
-    public class ChavePix
+    public class ChavePix : Entidade
     {
         public int Id { get; private set; }
-        public TipoChavePix Tipo { get; private set;}
+        public ETipoChavePix Tipo { get; private set;}
         public string Valor { get; private set; }
         public bool SouTitular { get; private set; }
-        public Titular Titular { get; private set; }
-
-        public DateTime DataRegistro { get; private set; }
-        public bool Removido { get; private set; }
+        public ETitular Titular { get; private set; }
 
         public int UsuarioId { get; private set; }
         public Usuario Usuario { get; private set; }
 
         protected ChavePix() { }
 
-        public ChavePix(TipoChavePix tipo, string valor, bool souTitular, Titular titular, int usuarioId)
+        public ChavePix(ETipoChavePix tipo, string valor, bool souTitular, ETitular titular, int usuarioId)
         {
             Tipo = tipo;
             Valor = valor;

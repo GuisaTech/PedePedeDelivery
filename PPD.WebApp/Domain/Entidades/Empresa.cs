@@ -1,6 +1,6 @@
 ﻿namespace PPD.WebApp.Domain.Entidades
 {
-    public class Empresa
+    public class Empresa : Entidade
     {
         public int Id { get; private set; }
         public string RazaoSocial { get; private set; }
@@ -20,9 +20,6 @@
 
         public int UsuarioId { get; private set; }
         public Usuario Usuario { get; private set; }
-
-        public DateTime DataRegistro { get; private set; }
-        public bool Removido { get; private set; }
 
         protected Empresa() { }
 

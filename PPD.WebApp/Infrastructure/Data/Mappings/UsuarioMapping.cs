@@ -58,6 +58,11 @@ namespace PPD.WebApp.Infrastructure.Data.Mappings
                 .HasForeignKey(x => x.UsuarioId)
                 .OnDelete(DeleteBehavior.NoAction);
 
+            builder.HasMany(x => x.Arquivos)
+                .WithOne(x => x.Usuario)
+                .HasForeignKey(x => x.UsuarioId)
+                .OnDelete(DeleteBehavior.NoAction);
+
         }
     }
 }

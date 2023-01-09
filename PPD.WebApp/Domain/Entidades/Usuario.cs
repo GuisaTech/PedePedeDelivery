@@ -22,9 +22,7 @@
 
         public List<ChavePix> ChavesPix { get; private set; }
         public List<ContaBancaria> ContasBancarias { get; private set; }
-
-        public DateTime DataRegistro { get; private set; }
-        public bool Removido { get; private set; }
+        public List<Arquivo> Arquivos { get; private set; }
 
         protected Usuario() { }
 
@@ -56,6 +54,8 @@
         public void AtualizarChavePix(List<ChavePix> chavesPix)=> ChavesPix = chavesPix;
         public void AtualizarContaBancaria(ContaBancaria contaBancaria)=> ContasBancarias.Add(contaBancaria);
         public void AtualizarContaBancaria(List<ContaBancaria> contasBancarias) => ContasBancarias= contasBancarias;
+        public void AtualizarArquivos(Arquivo arquivos) => Arquivos.Add(arquivos);
+        public void AtualizarArquivos(List<Arquivo> arquivos) => Arquivos= arquivos;
 
         public void AtualizarStatusRemovido(bool removido) => Removido = removido;
         public bool Valido() => true;

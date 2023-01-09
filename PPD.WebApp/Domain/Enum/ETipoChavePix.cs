@@ -1,6 +1,6 @@
 ﻿namespace PPD.WebApp.Domain.Enum
 {
-    public enum TipoChavePix
+    public enum ETipoChavePix
     {
         Cpf = 1,
         Cnpj = 2,

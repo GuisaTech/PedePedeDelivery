@@ -3,7 +3,7 @@ using PPD.Infrastructure.Data;
 using PPD.WebApp.Domain.Entidades;
 using PPD.WebApp.Infrastructure.Repository.Interfaces;
 
-namespace PPD.WebApp.Infrastructure.Repository
+namespace PPD.WebApp.Infrastructure.Repository.Concretos
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -14,23 +14,24 @@ namespace PPD.WebApp.Infrastructure.Repository
             _pedePedeContext = pedePedeContext;
         }
 
-        public void Adicionar(Usuario entidade)
+        public async Task Adicionar(Usuario entidade)
         {
             _pedePedeContext.Usuarios.Add(entidade);
-            _pedePedeContext.SaveChanges();
+            await _pedePedeContext.SaveChangesAsync();
         }
 
-        public void Atualizar(Usuario entidade)
+        public async Task Atualizar(Usuario entidade)
         {
             _pedePedeContext.Update(entidade);
-            _pedePedeContext.SaveChanges();
+            await _pedePedeContext.SaveChangesAsync();
         }
 
-        public void Remover(Usuario entidade)
+        public async Task Remover(Usuario entidade)
         {
             entidade.AtualizarStatusRemovido(true);
             _pedePedeContext.Update(entidade);
-            _pedePedeContext.SaveChanges();
+            await _pedePedeContext.SaveChangesAsync();
+
         }
 
         public async Task<Usuario> ObterPeloIdAsync(int peloId)

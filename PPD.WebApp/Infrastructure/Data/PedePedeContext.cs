@@ -16,6 +16,7 @@ namespace PPD.Infrastructure.Data
         public DbSet<ContaBancaria> ContasBancarias { get; set; }
         public DbSet<RedeSocial> RedesSociais { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Arquivo> Arquivos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

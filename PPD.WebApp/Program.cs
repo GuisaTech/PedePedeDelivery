@@ -1,8 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using PPD.Infrastructure.Data;
 using PPD.WebApp.Infrastructure.Configuration;
-using PPD.WebApp.Infrastructure.Repository;
-using PPD.WebApp.Infrastructure.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

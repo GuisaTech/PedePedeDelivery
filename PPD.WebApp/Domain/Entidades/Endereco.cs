@@ -1,6 +1,6 @@
 ﻿namespace PPD.WebApp.Domain.Entidades
 {
-    public class Endereco
+    public class Endereco : Entidade
     {
         public int Id { get; private set; }
         public string InformacaoEndereco { get; private set; }
@@ -11,8 +11,6 @@
         public string Estado { get; private set; }
         public string? Complemento { get; private set; }
         public string? Referencia { get; private set; }
-        public DateTime DataRegistro { get; private set; }
-        public bool Removido { get; private set; }
 
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }

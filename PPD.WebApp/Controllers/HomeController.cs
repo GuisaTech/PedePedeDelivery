@@ -12,10 +12,12 @@ namespace PPD.WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IEnderecoRepository _enderecoRepository;
 
-        public HomeController(IUsuarioRepository usuarioRepository)
+        public HomeController(IUsuarioRepository usuarioRepository, IEnderecoRepository enderecoRepository)
         {
-            _usuarioRepository= usuarioRepository;
+            _usuarioRepository = usuarioRepository;
+            _enderecoRepository = enderecoRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -44,11 +46,11 @@ namespace PPD.WebApp.Controllers
             ///Atualizando
             var usuario = await _usuarioRepository.ObterPeloIdAsync(4);
             //usuario.AtualizarInformacoesDePerfil("73999020709", DateTime.Parse("22-11-2000"));
-
+            var endereco = await _enderecoRepository.ObterPeloIdAsync(1);
             //_usuarioRepository.Atualizar(usuario);
 
             //Removendo
-            _usuarioRepository.Remover(usuario);
+            //_usuarioRepository.Remover(usuario);
 
 
 

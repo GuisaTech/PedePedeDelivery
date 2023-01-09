@@ -1,6 +1,6 @@
 ﻿namespace PPD.WebApp.Domain.Enum
 {
-    public enum Titular
+    public enum ETitular
     {
         Pessoal = 1,
         Empresa = 2
